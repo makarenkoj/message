@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<ul class="list-group list-group-flush">
+  <% if @user.notifications.any? %>
+    <h2 class="active">Link Message:</h2>
+    <li class="list-group-item">
+      <%= render partial: 'notifications/notification', collection: @user.notifications %>
+    </li>
+  <% else %>
+    <li class="list-group-item">User has not Links Messages</li>
+  <% end %>
+</ul>
+
+<div class="actions">
+  <%= link_to 'New Message', new_notification_path, class: 'btn btn-success' %> |
+  <%= link_to 'User Destroy', @user, method: :delete, data: { confirm: 'Are you sure?' },
+              class: "btn btn-danger" %> |
+  <%= link_to 'User Edit', edit_user_path(@user), class: 'btn btn-warning' %> |
+  <%= link_to 'Back', users_path,class: 'btn btn-primary' %>
+</div>

@@ -1,3 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  devise_scope :user do
+    get 'users/sign_out', to: "devise/sessions#destroy", as: "logout"
+  end
+
+  devise_for :users
+
+  resources :users
+  resources :notifications
+
+  root to: "users#index"
 end

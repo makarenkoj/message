@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Home pages</h1>
+
+<% if user_signed_in? %>
+<div class="actions">
+  <%= link_to 'New Message', new_notification_path, class: 'btn btn-success' %> |
+  <%= link_to 'Link Your messages', current_user, class: 'btn btn-info' %>
+</div>
+<% end %>

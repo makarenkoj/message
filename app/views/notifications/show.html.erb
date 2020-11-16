@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Submitted by User:</strong>
+  <%= @notification.user_id %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @notification.body %>
+</p>
+
+<div class="actions">
+  <%= link_to 'Back', current_user, class: 'btn btn-primary' %>
+</div>
